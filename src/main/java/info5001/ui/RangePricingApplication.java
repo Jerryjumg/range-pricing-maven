@@ -5,6 +5,9 @@
  */
 package info5001.ui;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
 
 import com.github.javafaker.Faker;
@@ -33,15 +36,24 @@ public class RangePricingApplication {
     Random randomInstance = new Random();
 
     System.out.println(" Random Numbers: ");
+    
+    ArrayList<Integer> randomIntegers = new ArrayList<Integer>();
+    int totalNumberOfRandomNumbers = 100;
+    int counter = 0;
 
-    for (int i = 0; i < 10; i++) {
+    while (counter < totalNumberOfRandomNumbers) {
       int randomInt = randomInstance.nextInt(100);
-      // Random 10-15
-      int randomIntInRange10to15 = randomInstance.nextInt(6) + 10;
-      float randomFloat = randomInstance.nextFloat();
-      System.out.println("Random integer: " + randomInt);
-      System.out.println("Random float: " + randomFloat);
+      if (!randomIntegers.contains(randomInt)) {
+        randomIntegers.add(randomInt);
+        counter++; // increment counter only if the number is not already in the list
+      }
     }
+
+    for (Integer integer : randomIntegers) {
+      System.out.println(integer);
+    }
+
+    System.out.println("We picked "+ randomIntegers.size() + " unique random numbers from 0 to 100.");
 
     // Data that is not number (e.g. names, addresses, etc.)
 
@@ -50,21 +62,21 @@ public class RangePricingApplication {
     System.out.println(" Customer list: ");
     for (int i = 0; i < 200; i++) {
 
-      String fullName = fakerInstance.name().fullName();
-      String address = fakerInstance.address().fullAddress();
+    String fullName = fakerInstance.name().fullName();
+    String address = fakerInstance.address().fullAddress();
 
-      System.out.println(fullName);
-      System.out.println(address);
-      System.out.println("-----------------");
+    System.out.println(fullName);
+    System.out.println(address);
+    System.out.println("-----------------");
     }
 
     System.out.println(" Supplier list: ");
     for (int i = 0; i < 200; i++) {
 
-      String companyName = fakerInstance.company().name();
+    String companyName = fakerInstance.company().name();
 
-      System.out.println(companyName);
-      System.out.println("-----------------");
+    System.out.println(companyName);
+    System.out.println("-----------------");
     }
 
     // Business business =
