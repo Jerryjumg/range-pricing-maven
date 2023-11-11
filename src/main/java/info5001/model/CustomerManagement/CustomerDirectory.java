@@ -6,16 +6,20 @@
 package info5001.model.CustomerManagement;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-
+import com.github.javafaker.Faker;
 import info5001.model.Business.Business;
+import info5001.model.OrderManagement.Order;
 import info5001.model.Personnel.Person;
+import info5001.model.ProductManagement.Product;
 
 /**
  *
  * @author kal bugrara
+ * @param <Item>
  */
-public class CustomerDirectory {
+public class CustomerDirectory<Item> {
 
     Business business;
     ArrayList<CustomerProfile> customerlist;
@@ -33,6 +37,7 @@ public class CustomerDirectory {
         customerlist.add(sp);
         return sp;
     }
+  
 
     public CustomerProfile findCustomer(String id) {
 
@@ -63,8 +68,18 @@ public class CustomerDirectory {
     }
 
 
+
+
     public void printShortInfo(){
         System.out.println("Checking what's inside the Customer directory.");
         System.out.println("There are " + customerlist.size() + " customers.");
+    }
+
+    public List<CustomerProfile> getCustomerList() {
+        return null;
+    }
+
+    public static CustomerProfile newCustomerProfile(String customerName) {
+        return null;
     }
 }

@@ -6,7 +6,8 @@
 package info5001.model.ProductManagement;
 
 import java.util.ArrayList;
-
+import java.util.List;
+import com.github.javafaker.Faker;
 import info5001.model.OrderManagement.OrderItem;
 
 /**
@@ -105,5 +106,6 @@ public class Product {
     public int getCeilingPrice(){
         return ceilingPrice;
     }
-
+ 
+    
 }

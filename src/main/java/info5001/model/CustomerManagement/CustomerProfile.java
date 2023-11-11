@@ -20,14 +20,22 @@ public class CustomerProfile {
     ArrayList<Market> markets;
     
     Person person;
-
+    String customerName;
+    String customerID;
+    
     public CustomerProfile(Person p) {
 
         person = p;
         orders = new ArrayList();
 
     }
+    
 
+
+    // public CustomerProfile(String customerName2) {
+    //     this.person = new Person(customerName);
+    //     this.orders = new ArrayList<>();
+    // }
            
     public int getTotalPricePerformance(){
         
@@ -59,18 +67,48 @@ public class CustomerProfile {
         }
         return false;
     }
-    public void addCustomerOrder(Order o){
-        orders.add(o);
-    }
-    @Override
-    public String toString(){
-        return person.getPersonId();
-    }
+    public class CustomerProfileClass {
+        ArrayList<Order> orders;
+        ArrayList<Market> markets;
+        
+        Person person;
+        String customerName;
+        String customerID;
+        
+        public CustomerProfileClass(String customerName) {
+            this.person = new Person(customerName);
+            this.orders = new ArrayList<>();
+        }
+
+        public void addCustomerOrder(Order o){
+            orders.add(o);
+        }
+        
         public String getCustomerId(){
-        return person.getPersonId();
+            return person.getPersonId();
+        }
+        
+        public String getPersonId(){
+            return person.getPersonId();
+        }
+        
+        public Person getPerson(){
+            return person;
+        }
+        
+
+        @Override
+        public String toString(){
+            return person.getPersonId();
+        }
     }
-            public Person getPerson(){
-        return person;
+    public void addCustomerOrder(Order order) {
+    }
+
+
+
+    public String getCustomerName() {
+        return null;
     }
         
         

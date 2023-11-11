@@ -15,8 +15,9 @@ import info5001.model.SalesManagement.SalesPersonProfile;
 /**
  *
  * @author kal bugrara
+ * @param <Item>
  */
-public class Order {
+public class Order<Item> {
 
     ArrayList<OrderItem> orderitems;
     CustomerProfile customer;
@@ -89,5 +90,8 @@ public void CancelOrder(){
 }
 public void Submit(){
     status = "Submitted";
+}
+
+public void addItem(Item item) {
 }
 }
